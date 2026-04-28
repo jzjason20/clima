@@ -22,5 +22,37 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.weather-shell {
+  --page-start: #16315a;
+  --page-mid: #1e4f82;
+  --page-end: #3b82f6;
+  --page-glow: rgba(147, 197, 253, 0.28);
+  --shell-bg: rgba(7, 18, 39, 0.54);
+  --panel-bg: rgba(7, 18, 39, 0.34);
+  --panel-soft: rgba(255, 255, 255, 0.12);
+  --panel-strong: rgba(8, 19, 38, 0.64);
+  --border-soft: rgba(255, 255, 255, 0.18);
+  --accent: #bfdbfe;
+  --accent-soft: rgba(219, 234, 254, 0.88);
+  --accent-strong: rgba(239, 246, 255, 0.96);
+  --hero-temp: #f8fbff;
+  --hero-temp-shadow: rgba(147, 197, 253, 0.28);
+  --text-primary: #f8fbff;
+  --text-secondary: rgba(235, 245, 255, 0.84);
+  --text-muted: rgba(219, 234, 254, 0.68);
+  --cta-text: #081428;
+  --shadow-color: rgba(4, 10, 24, 0.45);
+  background-color: var(--page-end);
+  background-image:
+    radial-gradient(circle at top, var(--page-glow), transparent 32%),
+    linear-gradient(
+      160deg,
+      var(--page-start) 0%,
+      var(--page-mid) 52%,
+      var(--page-end) 100%
+    );
+  background-attachment: fixed;
 }

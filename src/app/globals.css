@@ -30,21 +30,21 @@ body {
   --page-mid: #1e4f82;
   --page-end: #3b82f6;
   --page-glow: rgba(147, 197, 253, 0.28);
-  --shell-bg: rgba(7, 18, 39, 0.54);
-  --panel-bg: rgba(7, 18, 39, 0.34);
-  --panel-soft: rgba(255, 255, 255, 0.12);
-  --panel-strong: rgba(8, 19, 38, 0.64);
-  --border-soft: rgba(255, 255, 255, 0.18);
+  --shell-bg: rgba(7, 18, 39, 0.25);
+  --panel-bg: transparent;
+  --panel-soft: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(255, 255, 255, 0.05);
+  --border-soft: rgba(255, 255, 255, 0.08);
   --accent: #bfdbfe;
   --accent-soft: rgba(219, 234, 254, 0.88);
   --accent-strong: rgba(239, 246, 255, 0.96);
   --hero-temp: #f8fbff;
-  --hero-temp-shadow: rgba(147, 197, 253, 0.28);
+  --hero-temp-shadow: rgba(147, 197, 253, 0.15);
   --text-primary: #f8fbff;
   --text-secondary: rgba(235, 245, 255, 0.84);
   --text-muted: rgba(219, 234, 254, 0.68);
   --cta-text: #081428;
-  --shadow-color: rgba(4, 10, 24, 0.45);
+  --shadow-color: rgba(4, 10, 24, 0.2);
   background-color: var(--page-end);
   background-image:
     radial-gradient(circle at top, var(--page-glow), transparent 32%),

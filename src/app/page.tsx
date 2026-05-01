@@ -105,41 +105,41 @@ export default async function Home({ searchParams }: HomeProps) {
       className="weather-shell min-h-screen px-6 py-10 text-[var(--text-primary)] sm:px-8 lg:px-12"
       style={themeStyle as CSSProperties}
     >
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 rounded-4xl border border-[color:var(--border-soft)] bg-[var(--shell-bg)] p-6 shadow-[0_30px_80px_var(--shadow-color)] backdrop-blur xl:p-8">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-12 pt-8 xl:pt-16">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-[var(--accent-soft)]">
+            <p className="text-sm uppercase tracking-[0.35em] text-[var(--accent-soft)] font-medium">
               clima
             </p>
-            <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 max-w-2xl text-5xl font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl">
               Weather gossip for {weather.city}
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-[var(--text-secondary)] sm:text-lg">
+            <p className="mt-4 max-w-xl text-lg leading-7 text-[var(--text-secondary)] sm:text-xl">
               Current weather, the dramatic feels-like number, and the rest of
               the atmospheric tea.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[color:var(--border-soft)] bg-[var(--panel-soft)] px-5 py-4 text-sm text-[var(--text-secondary)]">
-            <p className="font-medium text-[var(--text-primary)]">
+          <div className="rounded-3xl bg-[var(--panel-soft)] px-5 py-4 text-sm text-[var(--text-secondary)] shadow-sm backdrop-blur-md">
+            <p className="font-medium text-[var(--text-primary)] text-base">
               {formatPlace(weather)}
             </p>
-            <p className="mt-2">
+            <p className="mt-1">
               Local time{" "}
               {formatLocationTime(weather.updatedAt, weather.timezoneOffset)}
             </p>
-            <p className="mt-1">
+            <p className="mt-0.5 text-[var(--text-muted)] text-xs">
               Updated at {formatUpdatedLabel(weather.updatedAt)}
             </p>
           </div>
         </div>
 
-        <section className="grid gap-4 rounded-[1.75rem] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] p-5 lg:grid-cols-[1.4fr_auto] lg:items-center">
-          <div className="space-y-4">
+        <section className="grid gap-6 rounded-[2rem] border border-[color:var(--border-soft)] bg-[var(--shell-bg)] p-6 lg:grid-cols-[1fr_auto] lg:items-center shadow-lg backdrop-blur-xl">
+          <div className="space-y-3 max-w-xl">
             <SearchForm city={city} />
-            <p className="text-sm text-[var(--text-muted)]">
-              Search by city, flip the units, then grab a share link or a card
-              image for Discord and assorted weather yapping.
+            <p className="text-sm text-[var(--text-secondary)] pl-2">
+              Search a city, flip the units, then grab a pretty card image for
+              your group chat overreacting.
             </p>
           </div>
 
@@ -149,37 +149,39 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1.3fr_0.9fr]">
-          <div className="rounded-[1.75rem] border border-[color:var(--border-soft)] bg-[var(--panel-soft)] p-6 sm:p-8">
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent-soft)]">
-              Current weather
+        <section className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+          <div className="rounded-[2.5rem] bg-[var(--panel-soft)] p-8 sm:p-10 shadow-lg backdrop-blur-xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent-soft)] font-medium mb-8">
+              Current Vibe
             </p>
-            <div className="mt-6 flex flex-wrap items-end gap-4">
-              <p className="text-7xl font-semibold tracking-[-0.06em] text-[var(--hero-temp)] [text-shadow:0_8px_28px_var(--hero-temp-shadow)] sm:text-8xl lg:text-9xl">
+            <div className="flex flex-col gap-6">
+              <p className="text-[7rem] leading-none font-medium tracking-tighter text-[var(--hero-temp)] [text-shadow:0_8px_32px_var(--hero-temp-shadow)] sm:text-[9rem]">
                 {formatTemperature(weather.temperature, weather.units)}
               </p>
-              <div className="pb-3 text-[var(--text-secondary)]">
-                <p className="text-2xl font-medium text-[var(--text-primary)]">
+              <div className="text-[var(--text-secondary)] mt-2">
+                <p className="text-3xl font-medium text-[var(--text-primary)]">
                   {weather.condition}
                 </p>
-                <p className="mt-2 text-base">{weather.conditionGroup}</p>
+                <p className="mt-2 text-lg opacity-90">
+                  {weather.conditionGroup}
+                </p>
               </div>
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.25rem] border border-[color:var(--border-soft)] bg-[var(--panel-strong)] p-5">
-                <p className="text-sm uppercase tracking-[0.25em] text-[var(--text-muted)]">
-                  Feels like
+            <div className="mt-12 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-3xl bg-[var(--panel-strong)] p-6 shadow-sm">
+                <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] font-medium">
+                  The Drama (Feels Like)
                 </p>
-                <p className="mt-3 text-3xl font-semibold text-[var(--text-primary)]">
+                <p className="mt-3 text-4xl font-medium text-[var(--text-primary)] tracking-tight">
                   {formatTemperature(weather.feelsLike, weather.units)}
                 </p>
               </div>
-              <div className="rounded-[1.25rem] border border-[color:var(--border-soft)] bg-[var(--panel-strong)] p-5">
-                <p className="text-sm uppercase tracking-[0.25em] text-[var(--text-muted)]">
-                  High / low
+              <div className="rounded-3xl bg-[var(--panel-strong)] p-6 shadow-sm">
+                <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] font-medium">
+                  The Range (High/Low)
                 </p>
-                <p className="mt-3 text-3xl font-semibold text-[var(--text-primary)]">
+                <p className="mt-3 text-4xl font-medium text-[var(--text-primary)] tracking-tight">
                   {formatTemperature(weather.high, weather.units)} /{" "}
                   {formatTemperature(weather.low, weather.units)}
                 </p>
@@ -187,20 +189,20 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
           </div>
 
-          <div className="rounded-[1.75rem] border border-[color:var(--border-soft)] bg-[var(--panel-strong)] p-6 sm:p-8">
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent-soft)]">
-              Details worth yapping about
+          <div className="rounded-[2.5rem] bg-[var(--panel-soft)] p-8 sm:p-10 shadow-lg backdrop-blur-xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent-soft)] font-medium mb-8">
+              Nerd Details
             </p>
-            <div className="mt-6 grid gap-4">
+            <div className="flex flex-col gap-6">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex items-center justify-between gap-4 border-b border-[color:var(--border-soft)] pb-4 last:border-b-0 last:pb-0"
+                  className="flex items-center justify-between gap-4 border-b border-[color:var(--border-soft)]/50 pb-5 last:border-b-0 last:pb-0"
                 >
-                  <p className="text-sm uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                  <p className="text-sm uppercase tracking-[0.15em] text-[var(--text-secondary)] font-medium">
                     {stat.label}
                   </p>
-                  <p className="text-right text-lg font-medium text-[var(--text-primary)]">
+                  <p className="text-right text-xl font-medium text-[var(--text-primary)] tracking-tight">
                     {stat.value}
                   </p>
                 </div>
